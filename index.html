@@ -13,6 +13,8 @@
       line-height: 1.6;
       background: #f0f2f5;
       color: #333;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     a {
@@ -21,11 +23,11 @@
       font-weight: 600;
     }
 
-    /* Header */
+    /* Header with particles */
     header {
       background: linear-gradient(135deg, #0A2540, #0077b6);
       color: white;
-      padding: 60px 20px;
+      padding: 100px 20px 150px 20px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -36,12 +38,30 @@
       font-size: 3rem;
       margin-bottom: 10px;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      z-index: 2;
+      position: relative;
     }
 
     header p {
       font-size: 1.3rem;
       letter-spacing: 1px;
       opacity: 0.9;
+      z-index: 2;
+      position: relative;
+    }
+
+    /* Particle effect */
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      animation: float 10s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) translateX(0) scale(1);}
+      50% { transform: translateY(-200px) translateX(50px) scale(1.2);}
+      100% { transform: translateY(0) translateX(0) scale(1);}
     }
 
     /* Sections */
@@ -99,7 +119,6 @@
       color: #555;
     }
 
-    /* Buttons/Links */
     .card a {
       display: inline-block;
       margin-top: 15px;
@@ -142,6 +161,12 @@
   <header>
     <h1>Eco Free Global</h1>
     <p>Innovative AI, ML & Data Science Solutions</p>
+    <!-- Particles -->
+    <div class="particle" style="width:10px; height:10px; top:20%; left:10%; animation-duration:8s;"></div>
+    <div class="particle" style="width:15px; height:15px; top:50%; left:70%; animation-duration:12s;"></div>
+    <div class="particle" style="width:8px; height:8px; top:80%; left:30%; animation-duration:10s;"></div>
+    <div class="particle" style="width:12px; height:12px; top:40%; left:50%; animation-duration:15s;"></div>
+    <div class="particle" style="width:6px; height:6px; top:60%; left:20%; animation-duration:9s;"></div>
   </header>
 
   <section>
